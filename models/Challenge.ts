@@ -1,9 +1,9 @@
-import { Schema, model, models } from "mongoose";
+import { Schema, model, models, Types } from "mongoose";
 
 export interface IUserStory {
   label: string;
   text: string;
-  color: string; // tailwind border+text classes e.g. "border-[#c0c1ff] text-[#c0c1ff]"
+  color: string;
 }
 
 export interface IRequirement {
@@ -12,7 +12,8 @@ export interface IRequirement {
 }
 
 export interface IChallenge {
-  slug: string;           // url-friendly id e.g. "ecommerce-platform"
+  _id: Types.ObjectId;
+  slug: string;
   title: string;
   difficulty: "Easy" | "Medium" | "Hard";
   tags: string[];
@@ -21,9 +22,9 @@ export interface IChallenge {
   requirements: IRequirement[];
   desktopImageUrl: string;
   mobileImageUrl?: string;
-  figmaUrl?: string;      // pro-only
+  figmaUrl?: string;
   published: boolean;
-  isPremium: boolean;     // true = Pro only
+  isPremium: boolean;
   submissionsCount: number;
   createdAt: Date;
 }

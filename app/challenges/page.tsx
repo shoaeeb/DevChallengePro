@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { connectDB } from "@/lib/mongodb";
-import { Challenge } from "@/models/Challenge";
+import { Challenge, type IChallenge } from "@/models/Challenge";
 
 export const dynamic = "force-dynamic";
 
@@ -12,7 +12,7 @@ const difficultyColor: Record<string, string> = {
 
 export default async function ChallengesPage() {
   await connectDB();
-  const challenges = await Challenge.find({ published: true }).sort({ createdAt: -1 }).lean();
+  const challenges = await Challenge.find({ published: true }).sort({ createdAt: -1 }).lean<IChallenge[]>();
 
   return (
     <main className="max-w-screen-2xl mx-auto px-6 py-16">

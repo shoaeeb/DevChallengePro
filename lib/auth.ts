@@ -1,7 +1,7 @@
 import type { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import { connectDB } from "@/lib/mongodb";
-import { User } from "@/models/User";
+import { User, type IUser } from "@/models/User";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -34,7 +34,7 @@ export const authOptions: NextAuthOptions = {
         (session.user as { id?: string; isPro?: boolean }).id = token.sub;
         // Fetch isPro from DB on each session refresh
         await connectDB();
-        const dbUser = await User.findOne({ githubId: token.sub }).lean() as { isPro?: boolean; proExpiresAt?: Date } | null;
+        const dbUser = await User.findOne({ githubId: token.sub }).lean<IUser>();
         // isPro is only true if proExpiresAt is in the future
         const isProActive =
           dbUser?.isPro === true &&

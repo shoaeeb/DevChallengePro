@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { connectDB } from "@/lib/mongodb";
-import { Challenge } from "@/models/Challenge";
+import { Challenge, type IChallenge } from "@/models/Challenge";
 
 export const dynamic = "force-dynamic";
 
 export default async function AdminChallengesPage() {
   await connectDB();
-  const challenges = await Challenge.find().sort({ createdAt: -1 }).lean();
+  const challenges = await Challenge.find().sort({ createdAt: -1 }).lean<IChallenge[]>();
 
   return (
     <div>
