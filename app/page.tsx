@@ -15,7 +15,7 @@ const challenges = [
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD9biASf4IHOrFwYQulgKc9kNtoh_2jF7CfgFpPev0IykdFOQDc3gKDqswDVZf6ngUn3Ml81LlE7sy3iB3Umk1POoeTHPD08wcTSt6yGHmUIHKDNXJtOXM7wCS2Ghbx52a6PX62fZEKymJwGCqBk69CL4178VPPc2RFYHvsj_8_7Sds2HawrPAP7C7MIHMU9lk1D0BmaG2dZHsNXWmBpume1Low53tJiZBDqygIy5AVVZ_RqGau0EdGUTusyqvj_TaIR53SDVjl4Mk",
   },
   {
-    id: 2,
+    id: "devnotes-component-driven-markdown-editor",
     title: "Pro Notes App",
     description: "A markdown-first productivity tool with offline support and sync.",
     difficulty: "EASY",
@@ -25,7 +25,7 @@ const challenges = [
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAjO941dTaZ8rDwb6wWAFM5jfA9KZJQjeWT0vgtVFs3US4WR2tWFUtoi3T7XbgSiWjTTvNWDxVi6iyGKhHywzgheiHNDqTZsLxo5ZY34OC1JOiEJ9AHWz2DPMrZ7nNf43hMV8-E_HYx6-Ax1qV4VMqXjaSr5ARTY537vHaBQQ_TqNccG5lUTt_n9pPDYfsyv1k3VZnczWq80upuqgXkoyTayDEPnLpSMwwjLOkTtu0kxHd95ZkcNEogMdIcSkm8bM7FPlUrdZPrSTg",
   },
   {
-    id: 3,
+    id: "pulsemetric-real-time-social-sentiment-dashboard",
     title: "Social Analytics",
     description: "Real-time data visualization engine for multi-channel social growth.",
     difficulty: "HARD",

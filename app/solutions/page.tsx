@@ -136,39 +136,49 @@ function SolutionsGallery() {
 
       {/* Filter Bar */}
       <section className="sticky top-[52px] z-40 bg-[#0b1326]/80 backdrop-blur-xl border-y border-[#464554]/10">
-        <div className="max-w-screen-2xl mx-auto px-8 py-4 flex flex-col md:flex-row gap-4 items-center justify-between">
-          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
-            {/* Sort */}
-            <button
-              onClick={() => navigate({ sort: "recent" })}
-              className={`text-xs uppercase tracking-widest px-4 py-2 rounded-lg whitespace-nowrap font-bold transition-colors ${sortParam === "recent" ? "bg-[#c0c1ff] text-[#1000a9]" : "text-[#c7c4d7] hover:bg-[#171f33]"}`}
-            >
-              Recent
-            </button>
-            <button
-              onClick={() => navigate({ sort: "votes" })}
-              className={`text-xs uppercase tracking-widest px-4 py-2 rounded-lg whitespace-nowrap font-bold transition-colors ${sortParam === "votes" ? "bg-[#c0c1ff] text-[#1000a9]" : "text-[#c7c4d7] hover:bg-[#171f33]"}`}
-            >
-              Most Voted
-            </button>
+        <div className="max-w-screen-2xl mx-auto px-4 md:px-8">
+          {/* Row 1: sort + count */}
+          <div className="flex items-center justify-between py-3 gap-3">
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => navigate({ sort: "recent" })}
+                className={`text-xs uppercase tracking-widest px-3 py-2 rounded-lg whitespace-nowrap font-bold transition-colors ${sortParam === "recent" ? "bg-[#c0c1ff] text-[#1000a9]" : "text-[#c7c4d7] hover:bg-[#171f33]"}`}
+              >
+                Recent
+              </button>
+              <button
+                onClick={() => navigate({ sort: "votes" })}
+                className={`text-xs uppercase tracking-widest px-3 py-2 rounded-lg whitespace-nowrap font-bold transition-colors ${sortParam === "votes" ? "bg-[#c0c1ff] text-[#1000a9]" : "text-[#c7c4d7] hover:bg-[#171f33]"}`}
+              >
+                Most Voted
+              </button>
+            </div>
+            <span className="text-[10px] text-[#908fa0] uppercase whitespace-nowrap shrink-0">
+              {loading ? "Loading..." : `${total} submission${total !== 1 ? "s" : ""}`}
+            </span>
+          </div>
 
-            <div className="h-6 w-px bg-[#464554]/30 mx-2 shrink-0" />
-
-            {/* Tech filters */}
-            <span className="text-[10px] text-[#908fa0] uppercase tracking-tighter mr-1 shrink-0">Stack:</span>
+          {/* Row 2: tech filters — horizontal scroll on mobile */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-3 scrollbar-none">
+            <span className="text-[10px] text-[#908fa0] uppercase tracking-tighter shrink-0">Stack:</span>
             {TECH_FILTERS.map((tech) => (
               <button
                 key={tech}
                 onClick={() => navigate({ tech: techFilter === tech ? null : tech })}
-                className={`text-xs uppercase tracking-widest px-4 py-2 rounded-lg whitespace-nowrap transition-colors ${techFilter === tech ? "bg-[#4cd7f6]/20 text-[#4cd7f6]" : "text-[#c7c4d7] hover:bg-[#171f33]"}`}
+                className={`text-xs uppercase tracking-widest px-3 py-1.5 rounded-lg whitespace-nowrap shrink-0 transition-colors ${techFilter === tech ? "bg-[#4cd7f6]/20 text-[#4cd7f6] border border-[#4cd7f6]/30" : "text-[#c7c4d7] hover:bg-[#171f33] border border-transparent"}`}
               >
                 {tech}
               </button>
             ))}
+            {techFilter && (
+              <button
+                onClick={() => navigate({ tech: null })}
+                className="text-[10px] text-[#ffb4ab] hover:text-[#ff8a80] uppercase tracking-wider shrink-0 ml-1 transition-colors"
+              >
+                ✕ Clear
+              </button>
+            )}
           </div>
-          <span className="text-[10px] text-[#908fa0] uppercase whitespace-nowrap shrink-0">
-            {loading ? "Loading..." : `${total} submission${total !== 1 ? "s" : ""}`}
-          </span>
         </div>
       </section>
 
