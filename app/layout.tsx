@@ -36,6 +36,9 @@ export const metadata: Metadata = {
     description:
       "Practice real-world full stack development with Figma-to-MERN challenges. Build portfolio projects and stand out as a developer.",
   },
+  verification: {
+    google: "google0824e4c5c0ef59da",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
