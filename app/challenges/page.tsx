@@ -1,8 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { connectDB } from "@/lib/mongodb";
 import { Challenge, type IChallenge } from "@/models/Challenge";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "All Challenges — DevChallenge Pro",
+  description:
+    "Browse full stack coding challenges built from real Figma designs. MERN stack, portfolio projects, and real-world tasks for developers of all levels.",
+  keywords: [
+    "Full Stack Coding Challenges",
+    "MERN Stack Practice Projects",
+    "Figma to MERN Project",
+    "Real World Full Stack Tasks",
+    "Portfolio Projects for Developers",
+    "Interactive Full Stack Practice",
+  ],
+};
 
 const difficultyColor: Record<string, string> = {
   Easy: "bg-[#8083ff] text-[#0d0096]",

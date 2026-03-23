@@ -7,8 +7,34 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "DevChallenge Pro",
-  description: "Build real full-stack apps from professional designs.",
+  title: "DevChallenge Pro — Full Stack Coding Challenges",
+  description:
+    "Practice real-world full stack development with Figma-to-MERN challenges. Build portfolio projects, sharpen your skills, and stand out as a developer.",
+  keywords: [
+    "Full Stack Coding Challenges",
+    "Portfolio Projects for Developers",
+    "Full Stack Project Ideas",
+    "Frontend Mentor Alternatives",
+    "MERN Stack Practice Projects",
+    "Full Stack Portfolio Challenge",
+    "Figma to MERN Project",
+    "Real World Full Stack Tasks",
+    "Interactive Full Stack Practice",
+  ],
+  openGraph: {
+    title: "DevChallenge Pro — Full Stack Coding Challenges",
+    description:
+      "Practice real-world full stack development with Figma-to-MERN challenges. Build portfolio projects and stand out as a developer.",
+    url: "https://devchallenge-pro.vercel.app",
+    siteName: "DevChallenge Pro",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "DevChallenge Pro — Full Stack Coding Challenges",
+    description:
+      "Practice real-world full stack development with Figma-to-MERN challenges. Build portfolio projects and stand out as a developer.",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
