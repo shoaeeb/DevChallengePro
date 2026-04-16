@@ -18,8 +18,8 @@ DevChallenge Pro gives developers production-grade challenges to build — not t
 
 ## Tech Stack
 
-- React
-- Node.js / Express
+- NextJs
+- Github Auth
 - MongoDB
 - Vercel (deployment)
 
